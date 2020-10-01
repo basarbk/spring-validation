@@ -1,5 +1,7 @@
 package com.bafoly.validation.user;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,7 +14,7 @@ public class UserController {
   UserService userService;
 
   @PostMapping("/users")
-  public User createUser(@RequestBody User user){
+  public User createUser(@Valid @RequestBody User user){
     return this.userService.save(user);
   }
   
