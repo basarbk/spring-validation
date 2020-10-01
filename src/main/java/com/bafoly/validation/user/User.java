@@ -22,10 +22,10 @@ public class User {
   @NotNull
   @Size(min = 3, max=10)
   private String username;
-
+  
   @NotNull
   @Email
-  @Column(unique = true)
+  @UniqueEmail
   private String email;
 
   @NotNull
